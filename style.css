@@ -1,0 +1,221 @@
+body {
+    background-color: #000; /* Noir vrai */
+    color: #fff; /* Texte blanc par défaut pour contraste */
+    font-family: 'Inter', sans-serif; /* Utilisation de la police Inter */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement le contenu */
+    justify-content: flex-start; /* Aligne le contenu en haut, le reste sera géré par les marges */
+    min-height: 100vh; /* Prend au moins toute la hauteur du viewport */
+    text-align: center; /* Centre le texte globalement */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.top-logo {
+    margin: 40px 0 20px;
+    filter: drop-shadow(0 0 15px #2e4bf1); /* Bleu existant, conservé */
+}
+
+.top-logo img {
+    width: 240px;
+    max-width: 90vw;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #007bffa0; /* Bleu ajusté */
+}
+
+.top-logo img:hover {
+    transform: scale(1.1) rotate(3deg);
+    filter: drop-shadow(0 0 25px #00e1ff); /* Bleu brillant pour le survol */
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #00e1ff; /* Couleur principale en bleu brillant */
+    text-shadow: 0 0 12px #007bff, 0 0 30px #1900ff; /* Ombres de texte bleues existantes, conservées */
+    margin-bottom: 20px;
+    text-align: center; /* Assure le centrage du titre */
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 30px; /* Centre le paragraphe */
+    color: #aaa;
+    text-shadow: 0 0 3px #00000044;
+    text-align: center; /* Assure le centrage du texte */
+}
+
+.btn {
+    display: inline-block;
+    background: rgba(0, 123, 255, 0.9); /* Bleu principal avec opacité */
+    color: #000;
+    font-weight: 700;
+    padding: 14px 30px;
+    margin: 10px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.15rem;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6); /* Ombre bleue */
+    transition: background 0.3s, transform 0.25s;
+    backdrop-filter: blur(8px);
+}
+
+.btn:hover {
+    background: #0056b3; /* Bleu plus foncé au survol */
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 8px 28px #0056b3cc; /* Ombre bleue plus foncée au survol */
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    max-width: 720px;
+    height: 360px;
+    margin: 40px auto 60px; /* Centre l'iframe */
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #007bff77; /* Ombre bleue */
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    color: #00e1ff; /* Bleu brillant pour les titres secondaires */
+    margin-top: 50px;
+    text-shadow: 0 0 10px #007bffaa; /* Ombre bleue pour les titres secondaires */
+    text-align: center; /* Assure le centrage du titre */
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 15, 0.95);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center; /* Centre les éléments du footer */
+    gap: 20px;
+    box-shadow: 0 -3px 10px #000000bb;
+    z-index: 100;
+}
+
+.footer button,
+.footer a button {
+    background: #007bff; /* Bleu principal */
+    border: none;
+    padding: 10px 24px;
+    color: #000;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #007bffcc; /* Ombre bleue */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer button:hover,
+.footer a button:hover {
+    background: #0056b3; /* Bleu plus foncé au survol */
+    color: #fff;
+}
+
+/* Styles pour les éléments de nouvelles et FAQ (global) */
+.news-item {
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    border-left: 4px solid #4caf50;
+    padding-left: 15px;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left; /* Conserver l'alignement à gauche pour le contenu des nouvelles */
+    max-width: 700px; /* Limite la largeur pour une meilleure lisibilité */
+    margin-left: auto; /* Centre l'élément */
+    margin-right: auto; /* Centre l'élément */
+}
+
+.news-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item {
+    border: 1px solid #4caf50;
+    border-radius: 8px;
+    margin: 15px auto; /* Centré et espacé */
+    max-width: 700px; /* Limite la largeur pour une meilleure lisibilité */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.faq-question {
+    background: #4caf50;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem; /* Ajusté pour une meilleure lisibilité */
+    text-align: left; /* Garder le texte de la question aligné à gauche */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #f9f9f9;
+    color: #333; /* Couleur de texte plus foncée pour le contraste */
+    padding: 0 20px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    text-align: left; /* Alignement du texte à gauche pour les réponses */
+}
+
+.faq-item.open .faq-answer {
+    padding: 15px 20px;
+    max-height: 500px; /* assez grand pour tout contenu */
+}
+
+/* Media query pour les petits écrans */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1rem;
+        padding: 0 12px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 12px 22px;
+        margin: 8px 8px;
+        border-radius: 10px;
+    }
+
+    iframe {
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 0;
+    }
+}
